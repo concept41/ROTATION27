@@ -4,8 +4,8 @@ $RosterWidth: 200px;
 $RosterPlayerHeight: 30px;
 $RosterPlayerWidth: $RosterWidth - 30px;
 $PlayerStatusWidth: 20px;
-$PlayerPositionWidth: 40px;
-$PlayerNameWidth: $RosterWidth - $PlayerStatusWidth - $PlayerPositionWidth;
+$PlayerPositionWidth: $RosterPlayerHeight;
+$PlayerNameWidth: $RosterPlayerWidth - $PlayerStatusWidth - $PlayerPositionWidth;
 $RosterPlayerBorderWidth: 3px;
 
 
@@ -14,29 +14,61 @@ $RosterPlayerBorderWidth: 3px;
   width: $RosterWidth;
   background-color: $mikasa-blue;
 
+  .RosterTitle {
+    font-family: $font-family;
+    font-weight: 600;
+    color: $white;
+    line-height: $RosterPlayerHeight;
+  }
+
   .RosterPlayer {
-    height: $RosterPlayerHeight;
-    width: $RosterPlayerWidth;
-    border: $RosterPlayerBorderWidth solid $white;
-    background-color: $mikasa-yellow;
-
-
-    .PlayerStatus {
+    height: $RosterPlayerHeight + $xl-margin;
+  
+    .innerContainer {
       height: $RosterPlayerHeight;
-      width: $PlayerStatusWidth;
-      background-color: $mikasa-blue;
-    }
+      width: $RosterPlayerWidth;
+      border: $RosterPlayerBorderWidth solid $white;
+      background-color: $mikasa-yellow;
 
-    .PlayerName {
-      width: $PlayerNameWidth;
-    }
 
-    .PlayerPosition {
-      height: $RosterPlayerHeight;
-      width: $PlayerPositionWidth;
-      background-color: $mikasa-blue;
-    }
+      .PlayerStatus {
+        height: $RosterPlayerHeight;
+        width: $PlayerStatusWidth;
+        background-color: $molten-green;
+      }
 
+      .PlayerName {
+        width: $PlayerNameWidth;
+        line-height: $RosterPlayerHeight;
+        
+        span {
+          $playerNamePadding: $sm-padding;
+          color: $black;
+          font-family: $font-family;
+          font-weight: 600;
+          width: $PlayerNameWidth - $playerNamePadding * 2;
+          text-align: center;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          padding-right: $playerNamePadding;
+          padding-left: $playerNamePadding;
+        }
+      }
+
+      .PlayerPosition {
+        height: $RosterPlayerHeight;
+        width: $PlayerPositionWidth;
+        background-color: $mikasa-blue;
+
+        span {
+          color: $white;
+          font-family: $font-family;
+          font-weight: 600;
+          line-height: $RosterPlayerHeight;
+        }
+      }
+    }
   }
 }
 
