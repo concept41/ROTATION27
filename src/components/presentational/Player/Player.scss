@@ -1,0 +1,14 @@
+@import 'scss/main.scss';
+
+.Player {
+  // variables
+  $PlayerHeight: 1; // m
+  $PlayerWidth: 1; // m
+
+  // props
+  height: mToPx($PlayerHeight);
+  width: mToPx($PlayerWidth);
+  border-radius: 100%;
+  background-color: $mikasa-blue;
+  position: absolute;
+}

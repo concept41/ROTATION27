@@ -1,0 +1,11 @@
+@import 'scss/variables.scss';
+
+/*-- Pixel Conversion --*/
+@function mToPx($m) {
+  @return $m * $mToPxConversionConstant;
+}
+
+/*-- Animation --*/
+@function easeInTransition($seconds) {
+  @return ease-in $seconds;
+}

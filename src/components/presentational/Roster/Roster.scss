@@ -1,0 +1,42 @@
+@import 'scss/main.scss';
+
+$RosterWidth: 200px;
+$RosterPlayerHeight: 30px;
+$RosterPlayerWidth: $RosterWidth - 30px;
+$PlayerStatusWidth: 20px;
+$PlayerPositionWidth: 40px;
+$PlayerNameWidth: $RosterWidth - $PlayerStatusWidth - $PlayerPositionWidth;
+$RosterPlayerBorderWidth: 3px;
+
+
+.Roster {
+  height: mToPx($FloorHeight / 2);
+  width: $RosterWidth;
+  background-color: $mikasa-blue;
+
+  .RosterPlayer {
+    height: $RosterPlayerHeight;
+    width: $RosterPlayerWidth;
+    border: $RosterPlayerBorderWidth solid $white;
+    background-color: $mikasa-yellow;
+
+
+    .PlayerStatus {
+      height: $RosterPlayerHeight;
+      width: $PlayerStatusWidth;
+      background-color: $mikasa-blue;
+    }
+
+    .PlayerName {
+      width: $PlayerNameWidth;
+    }
+
+    .PlayerPosition {
+      height: $RosterPlayerHeight;
+      width: $PlayerPositionWidth;
+      background-color: $mikasa-blue;
+    }
+
+  }
+}
+

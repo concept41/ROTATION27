@@ -1,0 +1,67 @@
+@import 'scss/main.scss';
+
+.CourtFloor {
+  // props
+  height: mToPx($FloorHeight / 2);
+  width: mToPx($FloorWidth);
+  background-image: url(../../../assets/basketball_floor.png);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 250px;
+  position: relative;
+}
+
+.Court {
+  // variables
+  $CourtHeight: 18; // m
+  $CourtWidth: 9; // m
+
+  // props
+  height: mToPx($CourtHeight / 2);
+  width: mToPx($CourtWidth);
+  border: $courtLine;
+}
+
+.FrontCourt {
+  border-bottom: $courtLine;
+}
+
+.FrontCourtZone {
+  // variables
+  $FrontCourtZoneHeight: 3; // m
+  $FrontCourtZoneWidth: 3; // m
+
+  // props
+  height: mToPx($FrontCourtZoneHeight);
+  width: mToPx($FrontCourtZoneWidth);
+}
+
+.BackCourtZone {
+  // variables
+  $BackCourtZoneHeight: 6; // m
+  $BackCourtZoneWidth: 3; // m
+
+  // props
+  height: mToPx($BackCourtZoneHeight);
+  width: mToPx($BackCourtZoneWidth);
+}
+
+.FreeZone {
+  // variables
+  $FreeZoneHeight: 12; // m
+  $FreeZoneWidth: 3; // m
+
+  // props
+  height: mToPx($FreeZoneHeight);
+  width: mToPx($FreeZoneWidth);
+}
+
+.ServingArea {
+  // variables
+  $ServingAreaHeight: 3; // m
+  $ServingAreaWidth: 9; // m
+
+  // props
+  height: mToPx($ServingAreaHeight) - $courtLineThickness * 2; // correction for border
+  width: mToPx($ServingAreaWidth);
+}

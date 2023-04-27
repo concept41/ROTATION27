@@ -1,8 +1,9 @@
 /*-- Colors -- */
-$base-black: black;
-$base-white: white;
-$gainsboro: #DBDFE2;
+$white: #ffffff;
+$black: #000000;
 $transparent: rgba(0,0,0,0);
+$mikasa-yellow: #efc815;
+$mikasa-blue: #273f8f;
 /*-- Typeography --*/
     /*-- Fonts --*/
     $font-family: 'Helvetica Neue', sans-serif;
@@ -10,8 +11,6 @@ $transparent: rgba(0,0,0,0);
     $xs-font-size: 14px;
     $sm-font-size: 20px;
     $lg-font-size: 40px;
-    /*-- Alternate Colors --*/
-    $disabled-base-black: $gainsboro;
 /*-- Borders --*/
     /*-- Color --*/
     /*-- Radius --*/
@@ -24,11 +23,11 @@ $transparent: rgba(0,0,0,0);
     $sm-margin: 5px;
     $md-margin: 7px;
     $lg-margin: 10px;
-/*-- Animation --*/
-$compactTransition: all ease 0.3s;
-$easeInTransition: easeInTransition(0.3s);
-$slowEaseInTransition: easeInTransition(0.5s);
-
-@function easeInTransition($seconds) {
-    @return ease-in $seconds;
-}
+/*-- Court --*/
+    /*-- Measurements --*/
+    $FloorHeight: 24; // m
+    $FloorWidth: 15; // m
+    $mToPxConversionConstant: 40px;
+    $courtLineThickness: $mToPxConversionConstant / 10;
+    /*-- Borders --*/
+    $courtLine: $courtLineThickness solid $white;
