@@ -7,5 +7,5 @@
 
 /*-- Animation --*/
 @function easeInTransition($seconds) {
-  @return ease-in $seconds;
+  @return all ease-in $seconds;
 }

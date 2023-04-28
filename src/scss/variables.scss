@@ -2,10 +2,12 @@
 $white: #ffffff;
 $black: #000000;
 $transparent: rgba(0,0,0,0);
+$dim-transparent: rgba(0,0,0,0.6);
 $mikasa-yellow: #efc815;
 $mikasa-blue: #273f8f;
 $molten-green: #0da082;
 $molten-red: #d24248;
+$white-into-mikasa-blue: #bec6e0;
 /*-- Typeography --*/
     /*-- Fonts --*/
     $font-family: 'Helvetica Neue', sans-serif;
@@ -16,6 +18,7 @@ $molten-red: #d24248;
 /*-- Borders --*/
     /*-- Color --*/
     /*-- Radius --*/
+    $xs-corner: 3px;
 /*-- Spacing --*/
     /*-- Padding --*/
     $xs-padding: 3px;

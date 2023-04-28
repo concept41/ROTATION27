@@ -2,3 +2,16 @@
 @mixin highlight-background {
   background: rgba(255, 255, 255, 0.4);
 }
+
+/*-- animation --*/
+@mixin ease-in-animation($seconds) {
+  transition-timing-function: easeInTransition($seconds);
+  -webkit-transition: easeInTransition($seconds); /* Safari */
+  transition: easeInTransition($seconds);
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+}

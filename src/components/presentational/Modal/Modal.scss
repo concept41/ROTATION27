@@ -1,0 +1,80 @@
+@import 'scss/main.scss';
+
+.Modal {
+  z-index: 999;
+  overflow: hidden;
+  background-color: $dim-transparent;
+  position: fixed;
+  inset: 0;
+  padding: $xl-margin; // defines max size of modal content
+  transition: all 0.3s ease-in-out;
+
+  
+  .ModalContent {
+    $ModalContentHeight: 450px;
+    $ModalContentWidth: 450px;
+
+
+    height: $ModalContentHeight;
+    width: $ModalContentWidth;
+    background-color: $white;
+    color: $black;
+    position: relative;
+    border-radius: $xs-corner;
+
+    .ModalCloseButton {
+      position: absolute;
+      right: $sm-padding;
+      top: $sm-padding;
+    }
+  }
+}
+
+.ModalCloseButton {
+  $AddButtonDiameter: 35px;
+  $AnimationDuration: 0.3s;
+
+  height: $AddButtonDiameter;
+  width: $AddButtonDiameter;
+  background-color: $transparent;
+  border: 0px;
+  border-radius: 100%;
+  outline: none;
+  @include ease-in-animation(0.3s);
+
+  .line1 {
+    width: 25px;
+    height: 2px;
+    background-color: $black;
+    display: inline-block;
+    position: absolute;
+    top: calc((100% - 2px) / 2);
+    left: calc((100% - 25px) / 2);
+    @include ease-in-animation(0.3s);
+    @include rotate(45deg);
+  }
+
+  .line2 {
+    width: 2px;
+    height: 25px;
+    background-color: $black;
+    display: inline-block;
+    position: absolute;
+    top: calc((100% - 25px) / 2);
+    left: calc((100% - 2px) / 2);
+    @include ease-in-animation(0.3s);
+    @include rotate(45deg);
+  }
+  
+  &:hover {
+    .line1, .line2 {
+      background-color: $mikasa-blue;
+    }
+  }
+
+  &:active {
+    .line1, .line2 {
+      background-color: $white-into-mikasa-blue;
+    }
+  }
+}

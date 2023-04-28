@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { FlexBox } from "components/presentational/FlexBox/FlexBox";
 
 
 import './Roster.scss';
 import { VOLLEYBALL_PLAYER_POSITIONS } from 'components/types/VOLLEYBALL_PLAYER_POSITIONS.enum';
 import { AddButton } from '../AddButton/AddButton';
+import { Modal } from '../Modal/Modal';
 
 export const Roster = () => {
-  const handleClick = () => console.log('fuck u');
+  const [isAddPlayerModalOpen, setIsAddPlayerModalOpen] = useState(false);
+  const openAddPlayerModal = useCallback(() => {
+    setIsAddPlayerModalOpen(true);
+  }, [setIsAddPlayerModalOpen]);
+
+  const closeAddPlayerModal = useCallback(() => {
+    setIsAddPlayerModalOpen(false);
+  }, [setIsAddPlayerModalOpen]);
 
   return (
     <div className='Roster'>
@@ -17,9 +25,12 @@ export const Roster = () => {
           <RosterPlayer name='elias'/>
         </FlexBox>
         <FlexBox justify='center'>
-          <AddButton handleClick={handleClick}/>
+          <AddButton handleClick={openAddPlayerModal}/>
         </FlexBox>
       </FlexBox>
+      <Modal isOpen={isAddPlayerModalOpen} handleClose={closeAddPlayerModal}>
+        hello world
+      </Modal>
     </div>
   );
 }
