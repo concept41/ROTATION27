@@ -24,7 +24,7 @@ export const RosterContainer = () => {
       from,
       to,
     }));
-  }, [dispatch, roster]);
+  }, [dispatch]);
 
   return (
     <Roster players={createDetailedRoster()} handleMove={movePlayer}/>

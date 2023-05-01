@@ -66,7 +66,7 @@ export const CourtFloorContainer = () => {
         }
       });
     setCourtPlayers(newCourtPlayers);
-  }, [numRotations, setNumRotations, roster, setCourtPlayers, orderedPlayers]);
+  }, [numRotations, setNumRotations, roster, setCourtPlayers, orderedPlayers, rotationSystem]);
 
   useEffect(() => {
     const orderedPlayersResult = orderedPlayers();
@@ -84,7 +84,7 @@ export const CourtFloorContainer = () => {
     } else {
       setCourtPlayers([]);
     }
-  }, [numRotations, orderedPlayers])
+  }, [numRotations, orderedPlayers, rotationSystem])
 
   return (
     <>

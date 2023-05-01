@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { reduxStorage } from 'components/storage/reduxStorage';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { LandingPage, LandingPagePath } from 'components/containers/LandingPage/LandingPage';
 
 import './App.css';

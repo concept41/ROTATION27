@@ -165,7 +165,7 @@ export const RosterPlayer = ({
   // handlers
   const handleClick = useCallback(() => {
     handleOpenEditModal(player.id);
-  }, [handleOpenEditModal])
+  }, [handleOpenEditModal, player])
 
   return (
     <div

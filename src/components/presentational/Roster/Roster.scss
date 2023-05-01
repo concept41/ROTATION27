@@ -9,7 +9,7 @@ $RosterPlayerBorderWidth: 3px;
 
 
 .Roster {
-  height: mToPx($FloorHeight / 2);
+  height: mToPx(calc($FloorHeight / 2));
   width: $RosterWidth;
   background-color: $mikasa-blue;
 

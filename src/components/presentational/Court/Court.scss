@@ -2,7 +2,7 @@
 
 .CourtFloor {
   // props
-  height: mToPx($FloorHeight / 2);
+  height: mToPx(calc($FloorHeight / 2));
   width: mToPx($FloorWidth);
   max-width: calc(100vw - $RosterWidth);
   background-image: url(../../../assets/basketball_floor.png);
@@ -19,7 +19,7 @@
   position: relative;
 
   // props
-  height: mToPx($CourtHeight / 2);
+  height: mToPx(calc($CourtHeight / 2));
   width: mToPx($CourtWidth);
   border: $courtLine;
 }

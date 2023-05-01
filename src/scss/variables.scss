@@ -39,7 +39,7 @@ $white-into-mikasa-blue: #bec6e0;
     $FloorHeight: 24; // m
     $FloorWidth: 15; // m
     $mToPxConversionConstant: 50px;
-    $courtLineThickness: $mToPxConversionConstant / 10;
+    $courtLineThickness: calc($mToPxConversionConstant / 10);
     /*-- Borders --*/
     $courtLine: $courtLineThickness solid $white;
 /*-- Roster --*/
