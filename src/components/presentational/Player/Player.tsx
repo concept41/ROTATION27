@@ -20,9 +20,9 @@ export const Player = ({
       }}>
       <FlexBox direction='column' alignItems='center'>
         <div className='NameTag'>
-          <span>{player.name}</span>
+          <span>{player?.name || ''}</span>
         </div>
-        <span className='Position'>{player.position[0]}</span>
+        <span className='Position'>{player?.position[0] || 'X'}</span>
       </FlexBox>
     </div>
   )

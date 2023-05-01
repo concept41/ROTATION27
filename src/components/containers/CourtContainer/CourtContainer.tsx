@@ -69,15 +69,21 @@ export const CourtFloorContainer = () => {
   }, [numRotations, setNumRotations, roster, setCourtPlayers, orderedPlayers]);
 
   useEffect(() => {
-    const newCourtPlayers = rotateArray(orderedPlayers(), numRotations)
-      .slice(0, 6)
-      .map((player, index) => {
-        return {
-          coordinates: rotationSystem[index],
-          player,
-        }
-      });
-    setCourtPlayers(newCourtPlayers);
+    const orderedPlayersResult = orderedPlayers();
+
+    if(orderedPlayersResult.length > 0) {
+      const newCourtPlayers = rotateArray(orderedPlayers(), numRotations)
+        .slice(0, 6)
+        .map((player, index) => {
+          return {
+            coordinates: rotationSystem[index],
+            player,
+          }
+        });
+      setCourtPlayers(newCourtPlayers);
+    } else {
+      setCourtPlayers([]);
+    }
   }, [numRotations, orderedPlayers])
 
   return (
