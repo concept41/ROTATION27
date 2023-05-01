@@ -10,11 +10,18 @@ export const initialPlayersState: PlayersState = {};
 
 export const playersReducer = createReducer(initialPlayersState, (builder) => {
   builder.addCase(removePlayerAction, (state, action) => {
-    console.log('received removePlayerAction', () => {});
+    delete state[action.payload.id];
   });
 
-  builder.addCase(modifyPlayerAction, (state, action) => {});
+  builder.addCase(modifyPlayerAction, (state, action) => {
+    state[action.payload.id] = {
+      ...action.payload,
+    };
+  });
 
-  builder.addCase(addPlayerAction, (state, action) => {});
-
+  builder.addCase(addPlayerAction, (state, action) => {
+    state[action.payload.id] = {
+      ...action.payload,
+    };
+  });
 });

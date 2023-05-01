@@ -1,8 +1,8 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { PlayerId } from 'components/types/PlayerTypes';
-import { addPlayerAction } from '../actions/addPlayerAction';
-import { modifyPlayerAction } from '../actions/modifyPlayerAction';
-import { removePlayerAction } from '../actions/removePlayerAction';
+import { rosterAddPlayerAction } from '../actions/rosterAddPlayerAction';
+import { rosterMovePlayerAction } from '../actions/rosterMovePlayerAction';
+import { rosterRemovePlayerAction } from '../actions/rosterRemovePlayerAction';
 
 
 interface RosterState {
@@ -14,9 +14,24 @@ const initialRosterState: RosterState = {
 };
 
 export const rosterReducer = createReducer(initialRosterState, (builder) => {
-  builder.addCase(removePlayerAction, (state, action) => {});
+  builder.addCase(rosterRemovePlayerAction, (state, action) => {
+    state.players = state.players.filter((id) => id !== action.payload.id);
+  });
 
-  builder.addCase(modifyPlayerAction, (state, action) => {});
+  builder.addCase(rosterMovePlayerAction, (state, action) => {
+    state.players = removeAndInsert(state.players, action.payload.from, action.payload.to);
+  });
 
-  builder.addCase(addPlayerAction, (state, action) => {});
+  builder.addCase(rosterAddPlayerAction, (state, action) => {
+    state.players.push(action.payload.id);
+  });
 });
+
+const removeAndInsert = (array: any[], from: number, to: number) => {
+  const res = [...array];
+  const element = res[from];
+  res.splice(from, 1);
+  res.splice(to, 0, element);
+
+  return res;
+};

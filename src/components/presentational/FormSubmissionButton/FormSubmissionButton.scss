@@ -1,0 +1,24 @@
+@import 'scss/main.scss';
+
+.FormSubmissionButton {
+  border: 0px;
+  background-color: $transparent;
+  color: $white-into-mikasa-blue;
+  @include ease-in-animation(0.2s);
+  cursor: pointer;
+
+  &:hover {
+    color: $mikasa-yellow;
+  }
+
+  &:active {
+    color: $mikasa-blue;
+  }
+
+
+  &.red {
+    &:hover {
+      color: $molten-red;
+    }
+  }
+}

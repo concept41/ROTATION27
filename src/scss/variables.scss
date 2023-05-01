@@ -15,14 +15,19 @@ $white-into-mikasa-blue: #bec6e0;
     $xs-font-size: 14px;
     $sm-font-size: 20px;
     $lg-font-size: 40px;
+    $xl-font-size: 80px;
+    /*-- Color --*/
+    $placeholder-text-color: $white-into-mikasa-blue;
 /*-- Borders --*/
     /*-- Color --*/
+    $input-border-color: $white-into-mikasa-blue;
     /*-- Radius --*/
     $xs-corner: 3px;
 /*-- Spacing --*/
     /*-- Padding --*/
     $xs-padding: 3px;
     $sm-padding: 5px;
+    $lg-padding: 10px;
     /*-- Margin --*/
     $xs-margin: 3px;
     $sm-margin: 5px;
@@ -33,7 +38,14 @@ $white-into-mikasa-blue: #bec6e0;
     /*-- Measurements --*/
     $FloorHeight: 24; // m
     $FloorWidth: 15; // m
-    $mToPxConversionConstant: 60px;
+    $mToPxConversionConstant: 50px;
     $courtLineThickness: $mToPxConversionConstant / 10;
     /*-- Borders --*/
     $courtLine: $courtLineThickness solid $white;
+/*-- Roster --*/
+    /*-- Measurements --*/
+    $RosterWidth: 200px;
+/*-- Modal --*/
+    /*-- Measurements --*/
+    $ModalContentHeight: 450px;
+    $ModalContentWidth: 450px;

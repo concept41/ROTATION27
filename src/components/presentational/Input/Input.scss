@@ -1,0 +1,45 @@
+@import "scss/main.scss";
+
+.input {
+    display: inline-block;
+    position: relative;
+
+    input {
+        $input-border: 1px solid $input-border-color;
+        border-style: none;
+        outline: none;
+        font-family: $font-family;
+        font-size: $xs-font-size;
+
+        ~ .inputBorder {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 75%;
+            border: $input-border;
+            @include ease-in-animation(0.3s);
+        }
+
+        &:focus ~ .inputBorder {
+            right: 0;
+            border: $input-border;
+        }
+
+        ~ label {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            pointer-events: none;
+            color: $placeholder-text-color;
+            font-family: $font-family;
+            font-size: $xs-font-size;
+            @include ease-in-animation(0.3s);
+        }
+    }
+
+    input:focus ~ label,
+    &.hasValue label {
+        top: 100%;
+        font-size: $xs-font-size;
+    }
+}

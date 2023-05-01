@@ -1,6 +1,5 @@
 @import 'scss/main.scss';
 
-$RosterWidth: 200px;
 $RosterPlayerHeight: 30px;
 $RosterPlayerWidth: $RosterWidth - 30px;
 $PlayerStatusWidth: 20px;
@@ -23,6 +22,7 @@ $RosterPlayerBorderWidth: 3px;
 
   .RosterPlayer {
     height: $RosterPlayerHeight + $xl-margin;
+    cursor: move;
   
     .innerContainer {
       height: $RosterPlayerHeight;

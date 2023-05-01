@@ -4,6 +4,7 @@
   // props
   height: mToPx($FloorHeight / 2);
   width: mToPx($FloorWidth);
+  max-width: calc(100vw - $RosterWidth);
   background-image: url(../../../assets/basketball_floor.png);
   background-repeat: repeat;
   background-position: center;
@@ -15,11 +16,41 @@
   // variables
   $CourtHeight: 18; // m
   $CourtWidth: 9; // m
+  position: relative;
 
   // props
   height: mToPx($CourtHeight / 2);
   width: mToPx($CourtWidth);
   border: $courtLine;
+}
+
+.CourtFloorMenu {
+  position: relative;
+
+  .CourtFloorMenuButton {
+    position: absolute;
+    border: none;
+    border: 1px solid $mikasa-blue;
+    background-color: $white-into-mikasa-blue;
+    color: $mikasa-blue;
+    font-family: $font-family;
+    font-weight: 600;
+    top: -21px;
+
+    &:disabled {
+      color: $white;
+      background-color: $white-into-mikasa-blue;
+      border: 1px solid $white-into-mikasa-blue;
+    }
+  }
+
+  .BackwardButton {
+    left: 0;
+  }
+
+  .ForwardButton {
+    right:0;
+  }
 }
 
 .FrontCourt {

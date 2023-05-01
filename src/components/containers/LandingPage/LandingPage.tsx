@@ -1,10 +1,10 @@
 import React from 'react';
-import { FlexBox } from "components/presentational/FlexBox/FlexBox";
-import { CourtFloor } from "components/presentational/Court/Court";
-import { Roster } from "components/presentational/Roster/Roster";
-
-
 import './LandingPage.scss';
+import { FlexBox } from "components/presentational/FlexBox/FlexBox";
+import { RosterContainer } from '../RosterContainer/RosterContainer';
+import { CourtFloorContainer } from '../CourtContainer/CourtContainer';
+
+
 
 export const LandingPagePath = "/";
 
@@ -12,10 +12,10 @@ export const LandingPage = () => {
   return (
     <div className='LandingPage'>
       <FlexBox direction='column'>
-        <span>Placeholder for building components</span>
+        <h1 className='title'>ROTATION28</h1>
         <FlexBox justify='center'>
-          <CourtFloor/>
-          <Roster/>
+          <CourtFloorContainer/>
+          <RosterContainer/>
         </FlexBox>
       </FlexBox>
     </div>

@@ -3,4 +3,11 @@
 .LandingPage {
   width: 100vw;
   height: 100vh;
+
+  .title {
+    font-family: $font-family;
+    font-size: $xl-font-size;
+    text-align: center;
+    margin: 0;
+  }
 }

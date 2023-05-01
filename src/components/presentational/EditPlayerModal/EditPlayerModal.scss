@@ -1,0 +1,22 @@
+@import 'scss/main.scss';
+
+.EditPlayerModal {
+  .EditPlayerForm {
+    width: $ModalContentWidth - 100px;
+
+    .FormTitle {
+      font-family: $font-family;
+      font-size: $sm-font-size;
+      font-weight: 600;
+    }
+
+
+    .FormInputContainer {
+      padding: $lg-padding 0;
+
+      .FormInput {
+        width: 100%;
+      }
+    }
+  }
+}

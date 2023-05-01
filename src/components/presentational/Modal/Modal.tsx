@@ -1,15 +1,18 @@
 import { PortalContainer } from "components/containers/PortalContainer/PortalContainer";
 import React, { ReactNode } from "react";
 import { FlexBox } from "../FlexBox/FlexBox";
+import cx from 'classnames';
 import "./Modal.scss";
 
-interface ModalProps {
+export interface ModalProps {
+  className?: string;
   children: ReactNode;
   isOpen: boolean;
   handleClose: () => void;
 }
 
 export const Modal = ({
+  className,
   children,
   isOpen,
   handleClose,
@@ -17,7 +20,7 @@ export const Modal = ({
   return isOpen ? (
     <PortalContainer>
       <FlexBox
-        className="Modal"
+        className={cx('Modal', className)}
         direction="column"
         alignItems="center"
         justify="center"
@@ -27,13 +30,24 @@ export const Modal = ({
           alignItems="center"
           justify="center"
         >
-          <button onClick={handleClose} className="ModalCloseButton">
-            <span className='line1'></span>
-            <span className='line2'></span>
-          </button>
+          <ModalCloseButton handleClose={handleClose}/>
           {children}
         </FlexBox>
       </FlexBox>
     </PortalContainer>
   ): null;
+}
+
+
+interface ModalCloseButtonProps {
+  handleClose: () => void;
+}
+
+const ModalCloseButton = ({ handleClose }: ModalCloseButtonProps) => {
+  return (
+    <button onClick={handleClose} className="ModalCloseButton">
+      <span className='line1'></span>
+      <span className='line2'></span>
+    </button>
+  )
 }
