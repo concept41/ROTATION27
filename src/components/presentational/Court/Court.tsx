@@ -27,8 +27,8 @@ const CourtPlayerRenderer = ({
   return  courtPlayers.length > 0 ? (
     <>
       {
-        courtPlayers.map(({player, coordinates}) => (
-          <Player player={player} coordinates={coordinates}/>
+        courtPlayers.map(({player, coordinates}, idx) => (
+          <Player key={idx} player={player} coordinates={coordinates}/>
         ))
       }
     </>
