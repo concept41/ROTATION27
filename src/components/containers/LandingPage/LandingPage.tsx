@@ -12,7 +12,7 @@ export const LandingPage = () => {
   return (
     <div className='LandingPage'>
       <FlexBox direction='column'>
-        <h1 className='title'>ROTATION28</h1>
+        <h1 className='title'>ROTATION27</h1>
         <FlexBox justify='center'>
           <CourtFloorContainer/>
           <RosterContainer/>
