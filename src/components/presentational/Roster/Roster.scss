@@ -12,6 +12,7 @@ $RosterPlayerBorderWidth: 3px;
   height: mToPx(calc($FloorHeight / 2));
   width: $RosterWidth;
   background-color: $mikasa-blue;
+  overflow-y: scroll;
 
   .RosterTitle {
     font-family: $font-family;
