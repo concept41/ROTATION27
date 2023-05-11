@@ -16,6 +16,7 @@ const saveToLocalStorage = (state: RootState) => {
 
 const loadFromLocalStorage = () => {
   try {
+    console.log("loading from local storage");
     const serialisedState = localStorage.getItem("persistantState");
     if (serialisedState === null) return undefined;
     return JSON.parse(serialisedState);

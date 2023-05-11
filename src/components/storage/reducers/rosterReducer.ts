@@ -5,7 +5,7 @@ import { rosterMovePlayerAction } from '../actions/rosterMovePlayerAction';
 import { rosterRemovePlayerAction } from '../actions/rosterRemovePlayerAction';
 
 
-interface RosterState {
+export interface RosterState {
   players: PlayerId[];
 }
 

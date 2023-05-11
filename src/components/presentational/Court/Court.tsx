@@ -1,9 +1,10 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import './Court.scss';
 import { FlexBox } from "components/presentational/FlexBox/FlexBox";
 import { Player } from "components/presentational/Player/Player";
 import { Coordinates, handleRotateType } from 'components/containers/CourtContainer/CourtContainer';
 import { PlayerState } from 'components/types/PlayerTypes';
+import { SettingsModal } from '../SettingsModal/SettingsModal';
 
 
 export interface CourtPlayer {
@@ -50,7 +51,7 @@ export const CourtFloor = ({
         </FlexBox>
         <FreeZone/>
       </FlexBox>
-      <CourtFloorMenu isDisabled={!(courtPlayers.length > 0)}handleRotate={handleRotate}/>
+      <CourtFloorMenu isDisabled={!(courtPlayers.length > 0)} handleRotate={handleRotate}/>
     </div>
   );
 }
@@ -68,6 +69,8 @@ const CourtFloorMenu = ({
   handleRotate,
   isDisabled,
 }: CourtFloorMenuProps) => {
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+
   const handleClickForward = useCallback(() => {
     handleRotate()
   }, [handleRotate]);
@@ -76,12 +79,23 @@ const CourtFloorMenu = ({
     handleRotate(false)
   }, [handleRotate]);
 
+  const openSettingsModal = useCallback(() => {
+    setIsSettingsModalOpen(true);
+  }, [setIsSettingsModalOpen]);
+
+  const closeSettingsModal = useCallback(() => {
+    setIsSettingsModalOpen(false);
+  }, [setIsSettingsModalOpen]);
+
+
   return (
     <div className='CourtFloorMenu'>
       <FlexBox direction='column'>
         <button disabled={isDisabled} className='BackwardButton CourtFloorMenuButton'onClick={handleClickBackward}>Backward</button>
+        <button className='SettingsButton CourtFloorMenuButton' onClick={openSettingsModal}>Settings</button>
         <button disabled={isDisabled} className='ForwardButton CourtFloorMenuButton' onClick={handleClickForward}>Forward</button>
       </FlexBox>
+      <SettingsModal isOpen={isSettingsModalOpen} handleClose={closeSettingsModal}/>
     </div>
   );
 }
