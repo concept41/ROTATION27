@@ -1,0 +1,16 @@
+name: rotation27
+kind: app
+apiVersion: v0.0
+hostname: rotation27.com
+metadata:
+  resource:
+    version: v0.0
+    description: volleyball rotation manager
+  visibility: public
+  concept:
+    number: 27
+spec:
+  documentation:
+    httpGet: rotation27.com/docs
+  repository:
+    httpGet: https://github.com/concept41/ROTATION27
